@@ -4,10 +4,9 @@ public:
         int ans = start^goal;
 
         int ct = 0;
-        for(int i=0;i<=31;i++){
-            if(ans&(1<<i)){
-                ct++;
-            }
+        while(ans){
+            ct++;
+            ans = ans & (ans-1);
         }
 
         return ct;
